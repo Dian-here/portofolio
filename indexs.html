@@ -1,0 +1,1374 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio personal Diana Jenni Manurung, mahasiswa Manajemen Informatika.">
+    <title>Diana Jenni Manurung | Personal Portfolio</title>
+
+    <style>
+        /* ===== RESET & WARNA ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --pink: #d95788;
+            --pink-dark: #ad3f70;
+            --pink-light: #fce8f0;
+            --pink-pale: #fff7fa;
+            --wine: #592c49;
+            --text: #574653;
+            --muted: #81727e;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+        /* ===== NAVIGASI ===== */
+        header {
+            background: rgba(255, 247, 250, 0.96);
+            border-bottom: 1px solid #f4dce6;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            min-height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+            color: var(--wine);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--pink);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+        /* ===== HERO / PROFIL UTAMA ===== */
+        .hero {
+            background:
+                radial-gradient(ellipse at 10% 15%, #fce5ee 0, transparent 35%),
+                linear-gradient(135deg, #fff9fb, #fceaf1);
+            padding: 65px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 310px 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .profile-frame {
+            width: 280px;
+            height: 340px;
+            margin: auto;
+            border: 2px solid #e98aac;
+            border-radius: 48% 48% 42% 42%;
+            padding: 9px;
+            background: white;
+            box-shadow: 0 15px 35px #d9578820;
+            transform: rotate(-2deg);
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: inherit;
+            display: block;
+            transform: rotate(2deg);
+        }
+
+        .hello {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 26px;
+            color: var(--pink-dark);
+        }
+
+        .hero h1 {
+            color: var(--wine);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(32px, 4.5vw, 53px);
+            line-height: 1.2;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            color: var(--pink-dark);
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .hero-quote {
+            margin: 22px 0;
+            font-size: 17px;
+        }
+
+        .hero-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 25px;
+            margin-top: 25px;
+        }
+
+        .detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .detail-icon {
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            color: white;
+            background: var(--pink);
+            font-size: 17px;
+        }
+
+        /* ===== JUDUL SECTION ===== */
+        .section {
+            padding: 65px 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: var(--wine);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            margin-bottom: 22px;
+        }
+
+        .title-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), #b84375);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        /* ===== TENTANG SAYA ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #665963;
+        }
+
+        .about-note {
+            padding: 22px;
+            border-radius: 16px;
+            background: var(--pink-pale);
+            border: 1px solid #f6dce7;
+            color: var(--pink-dark);
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 21px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 23px;
+            background: var(--pink);
+            color: white;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: var(--pink-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ===== KARTU ===== */
+        .soft-section {
+            background: var(--pink-pale);
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #f4e1e9;
+            border-radius: 18px;
+            padding: 27px;
+            box-shadow: 0 7px 24px #75405808;
+        }
+
+        .card .section-title {
+            font-size: 23px;
+            margin-bottom: 25px;
+        }
+
+        /* ===== PENDIDIKAN ===== */
+        .education-list {
+            list-style: none;
+        }
+
+        .education-list li {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 13px;
+            margin-bottom: 20px;
+        }
+
+        .education-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .number {
+            width: 29px;
+            height: 29px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: white;
+            background: var(--pink);
+            font-size: 13px;
+        }
+
+        .education-list strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .education-list small {
+            display: block;
+            color: var(--pink);
+            font-size: 12px;
+        }
+
+        /* ===== KEAHLIAN ===== */
+        .skill-list {
+            display: grid;
+            gap: 22px;
+        }
+
+        .skill {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--pink-light);
+            font-size: 23px;
+        }
+
+        .skill h3 {
+            font-size: 15px;
+            color: var(--wine);
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        /* ===== HOBI ===== */
+        .hobbies {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .hobby {
+            padding: 15px 5px;
+            border-radius: 13px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hobby:hover {
+            background: var(--pink-pale);
+            transform: translateY(-4px);
+        }
+
+        .hobby-icon {
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 10px;
+            background: var(--pink-light);
+            border-radius: 50%;
+            font-size: 27px;
+        }
+
+        .hobby p {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ===== PROYEK / PENGALAMAN ===== */
+        .project-box {
+            display: grid;
+            grid-template-columns: 105px 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 23px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #fff3f8, #fbe5ee);
+        }
+
+        .project-icon {
+            width: 95px;
+            height: 95px;
+            display: grid;
+            place-items: center;
+            background: white;
+            border-radius: 50%;
+            font-size: 42px;
+        }
+
+        .project-box h3 {
+            color: var(--wine);
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .project-box p {
+            font-size: 13px;
+            color: #6e5d69;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: white;
+            color: var(--pink-dark);
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* ===== KONTAK ===== */
+        .contact-section {
+            background: linear-gradient(120deg, #a95479, #7e405f);
+            color: white;
+            padding: 45px 0;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-section .section-title {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            font-size: 14px;
+            color: #ffedf4;
+            margin-bottom: 8px;
+        }
+
+        .contact-section .button {
+            background: #f7a5c5;
+            color: #592c49;
+        }
+
+        .contact-section .button:hover {
+            background: white;
+        }
+
+        .thank-you {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 23px;
+            text-align: center;
+            color: #ffe3ed;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 20px 0;
+            background: #592c49;
+            color: #f9e8ef;
+            font-size: 12px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 800px) {
+            nav {
+                padding: 15px 0;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 10px 18px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .hero-details {
+                justify-content: center;
+                text-align: left;
+            }
+
+            .profile-frame {
+                width: 230px;
+                height: 280px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .thank-you {
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 92%;
+            }
+
+            .hero {
+                padding: 45px 0;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+                overflow-wrap: anywhere;
+            }
+
+            .subtitle {
+                letter-spacing: 1.5px;
+                font-size: 11px;
+            }
+
+            .hero-quote {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 45px 0;
+            }
+
+            .section-title {
+                font-size: 23px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .hobbies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .project-icon {
+                margin: auto;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+/* ==============================
+   1. PENGATURAN DASAR
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff7fa;
+    color: #493541;
+    line-height: 1.8;
+    padding: 40px 20px;
+}
+
+/* ==============================
+   2. KONTEN UTAMA
+============================== */
+
+body {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #c34f83;
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #c34f83;
+    font-size: 23px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f4c6da;
+}
+
+/* ==============================
+   3. FOTO PROFIL
+============================== */
+
+img {
+    display: block;
+    width: 220px;
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 25px;
+    border-radius: 20px;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(195, 79, 131, 0.18);
+}
+
+/* ==============================
+   4. INFORMASI PROFIL
+============================== */
+
+p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+body > p {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border-left: 4px solid #e58bb3;
+    box-shadow: 0 3px 12px rgba(195, 79, 131, 0.06);
+}
+
+/* ==============================
+   5. TENTANG SAYA
+============================== */
+
+h2 + p {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(195, 79, 131, 0.07);
+    text-align: justify;
+}
+
+/* ==============================
+   6. HOBI DAN KEAHLIAN
+============================== */
+
+ul,
+ol {
+    background: white;
+    padding: 20px 20px 20px 45px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(195, 79, 131, 0.07);
+}
+
+li {
+    padding: 5px 0;
+}
+
+ul li::marker {
+    color: #d86b9d;
+}
+
+ol li::marker {
+    color: #c34f83;
+    font-weight: bold;
+}
+
+/* ==============================
+   7. KONTAK
+============================== */
+
+a {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 12px 25px;
+    background: #d86b9d;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(195, 79, 131, 0.15);
+    transition: 0.3s ease;
+}
+
+a:hover {
+    background: #b94378;
+    transform: translateY(-3px);
+}
+
+/* ==============================
+   8. RESPONSIVE UNTUK HP
+============================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    img {
+        width: 190px;
+        height: 230px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    ul,
+    ol {
+        padding-left: 35px;
+    }
+}
+
+        }
+        
+/* ===== TECHNICAL SKILLS: ML & COMPUTER VISION ===== */
+
+.ml-section {
+    background: linear-gradient(180deg, #fff8fb, #fff);
+}
+
+.ml-intro {
+    max-width: 720px;
+    margin: -8px auto 30px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.ml-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ml-card {
+    padding: 23px;
+    border: 1px solid #f3dce6;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 7px 22px #75405808;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ml-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px #d9578818;
+}
+
+.ml-card h3 {
+    color: var(--wine);
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.ml-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ml-number {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 13px;
+    border-radius: 11px;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.ml-card strong {
+    color: var(--wine);
+}
+
+/* ===== CERTIFICATES & COURSES ===== */
+
+.certificate-section {
+    background: var(--pink-pale);
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.certificate-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #f1d9e4;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #7540580a;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 30px #d957881b;
+}
+
+.certificate-image {
+    height: 225px;
+    padding: 15px;
+    background: linear-gradient(135deg, #fce8f0, #fff7fa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-image img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.certificate-info {
+    padding: 22px;
+}
+
+.certificate-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.certificate-info h3 {
+    color: var(--wine);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.certificate-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.certificate-link {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 9px 16px;
+    border-radius: 25px;
+    background: var(--pink);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.certificate-link:hover {
+    background: var(--pink-dark);
+}
+
+.certificate-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+    .ml-grid,
+    .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ml-card {
+        padding: 20px;
+    }
+
+    .certificate-image {
+        height: 200px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGASI -->
+    <header>
+        <nav class="container">
+            <a href="#beranda" class="logo">
+                Diana Jenni <span>♥</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang Saya</a></li>
+                <li><a href="#pendidikan">Pendidikan</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#hobi">Hobi</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PROFIL UTAMA -->
+        <section class="hero" id="beranda">
+            <div class="container hero-content">
+
+                <div class="profile-frame">
+                    <img src="foto1.jpeg"
+                         alt="Foto profil Diana Jenni Manurung">
+                </div>
+
+                <div>
+                    <p class="hello">Halo, Saya ♡</p>
+
+                    <h1>Diana Jenni Manurung</h1>
+
+                    <p class="subtitle">
+                        MAHASISWA MANAJEMEN INFORMATIKA
+                    </p>
+
+                    <p class="hero-quote">
+                        "Belajar hari ini, untuk masa depan yang lebih baik."
+                    </p>
+
+                    <div class="hero-details">
+                        <div class="detail">
+                            <span class="detail-icon">♙</span>
+                            <div>
+                                <strong>NIM</strong><br>
+                                2505102049
+                            </div>
+                        </div>
+
+                        <div class="detail">
+                            <span class="detail-icon">▤</span>
+                            <div>
+                                <strong>Kelas</strong><br>
+                                MI-3A
+                            </div>
+                        </div>
+
+                        <div class="detail">
+                            <span class="detail-icon">◇</span>
+                            <div>
+                                <strong>Program Studi</strong><br>
+                                Manajemen Informatika
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TENTANG SAYA -->
+        <section class="section" id="tentang">
+            <div class="container about-grid">
+
+                <div class="about-text">
+                    <h2 class="section-title">
+                        <span class="title-icon">♡</span>
+                        Tentang Saya
+                    </h2>
+
+                    <p>
+                        Saya adalah mahasiswa Program Studi Manajemen
+                        Informatika yang sedang belajar pemrograman web.
+                        Saya memiliki ketertarikan terhadap teknologi,
+                        desain website, dan pengembangan aplikasi.
+                    </p>
+
+                    <p>
+                        Saya suka belajar hal baru, mencoba pengalaman
+                        yang berbeda, dan menghadapi tantangan yang menguji
+                        adrenalin saya. Bagi saya, setiap tantangan adalah
+                        kesempatan untuk berkembang dan menjadi lebih baik.
+                    </p>
+
+                    <a href="#pendidikan" class="button">
+                        Kenal Lebih Dekat &nbsp; →
+                    </a>
+                </div>
+
+                <div class="about-note">
+                    <p>Dream</p>
+                    <p>Learn</p>
+                    <p>Build</p>
+                    <p>Grow ♡</p>
+                    <hr style="width: 65px; margin: 15px auto;
+                               border: 1px solid #d95788;">
+                    <small style="font-family: Arial, sans-serif;
+                                  font-size: 12px;">
+                        Terus belajar, terus bertumbuh.
+                    </small>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PENDIDIKAN DAN KEAHLIAN -->
+        <section class="section soft-section">
+            <div class="container two-columns">
+
+                <!-- PENDIDIKAN -->
+                <article class="card" id="pendidikan">
+                    <h2 class="section-title">
+                        <span class="title-icon">♧</span>
+                        Pendidikan
+                    </h2>
+
+                    <ol class="education-list">
+                        <li>
+                            <span class="number">1</span>
+                            <div>
+                                <strong>SDN 173678 JMT</strong>
+                                <small>Pendidikan Dasar</small>
+                            </div>
+                        </li>
+
+                        <li>
+                            <span class="number">2</span>
+                            <div>
+                                <strong>SMPN 1 ULUAN</strong>
+                                <small>Pendidikan Menengah Pertama</small>
+                            </div>
+                        </li>
+
+                        <li>
+                            <span class="number">3</span>
+                            <div>
+                                <strong>SMAN 1 ULUAN</strong>
+                                <small>2022 – 2025</small>
+                            </div>
+                        </li>
+
+                        <li>
+                            <span class="number">4</span>
+                            <div>
+                                <strong>D3 Manajemen Informatika</strong>
+                                <small>POLMED · 2025 – Sekarang</small>
+                            </div>
+                        </li>
+                    </ol>
+                </article>
+
+
+<!-- TECHNICAL SKILLS -->
+<section class="section ml-section" id="technical-skills">
+    <div class="container">
+
+        <h2 class="section-title" style="justify-content:center;">
+            <span class="title-icon">⌘</span>
+            Technical Skills
+        </h2>
+
+        <p class="ml-intro">
+            Machine Learning &amp; Computer Vision
+            <br>
+            Pengetahuan dan keterampilan teknis yang sedang saya
+            pelajari dan kembangkan.
+        </p>
+
+        <div class="ml-grid">
+
+            <article class="ml-card">
+                <span class="ml-number">01</span>
+                <h3><strong>Python Programming</strong></h3>
+                <p>
+                    Memahami dasar pemrograman Python untuk pengolahan
+                    data dan pengembangan model machine learning.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">02</span>
+                <h3><strong>Data Analysis (EDA)</strong></h3>
+                <p>
+                    Memahami eksplorasi, analisis, dan visualisasi data
+                    untuk mengidentifikasi pola dan karakteristik dataset.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">03</span>
+                <h3><strong>Machine Learning</strong></h3>
+                <p>
+                    Memahami konsep dasar machine learning,
+                    preprocessing data, serta algoritma pembelajaran
+                    terawasi (supervised learning).
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">04</span>
+                <h3><strong>Deep Learning &amp; CNN</strong></h3>
+                <p>
+                    Memahami dasar neural network dan Convolutional
+                    Neural Network (CNN) untuk pengolahan citra.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">05</span>
+                <h3><strong>Image Classification</strong></h3>
+                <p>
+                    Memahami klasifikasi citra menggunakan deep learning
+                    dan konsep transfer learning.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">06</span>
+                <h3><strong>Object Detection</strong></h3>
+                <p>
+                    Memahami konsep deteksi objek pada citra untuk
+                    mengidentifikasi lokasi dan kategori objek.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">07</span>
+                <h3><strong>Image Segmentation</strong></h3>
+                <p>
+                    Memahami segmentasi citra untuk membedakan area
+                    atau objek berdasarkan piksel.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">08</span>
+                <h3><strong>OpenCV &amp; Image Processing</strong></h3>
+                <p>
+                    Memahami dasar pengolahan citra digital
+                    menggunakan OpenCV.
+                </p>
+            </article>
+
+            <article class="ml-card">
+                <span class="ml-number">09</span>
+                <h3><strong>Data Preparation</strong></h3>
+                <p>
+                    Memahami persiapan dataset citra dan pengelolaan
+                    pasangan gambar-mask untuk kebutuhan segmentasi.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- HOBI DAN PROYEK -->
+        <section class="section">
+            <div class="container two-columns">
+
+                <!-- HOBI -->
+                <article id="hobi">
+                    <h2 class="section-title">
+                        <span class="title-icon">♥</span>
+                        Hobi
+                    </h2>
+
+                    <div class="card hobbies">
+                        <div class="hobby">
+                            <div class="hobby-icon">📚</div>
+                            <p>Membaca Buku Nonfiksi</p>
+                        </div>
+
+                        <div class="hobby">
+                            <div class="hobby-icon">🥋</div>
+                            <p>Karate</p>
+                        </div>
+
+                        <div class="hobby">
+                            <div class="hobby-icon">🎵</div>
+                            <p>Bernyanyi</p>
+                        </div>
+
+                        <div class="hobby">
+                            <div class="hobby-icon">🏊</div>
+                            <p>Berenang</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK -->
+                <article id="proyek">
+                    <h2 class="section-title">
+                        <span class="title-icon">▣</span>
+                        Proyek / Pengalaman
+                    </h2>
+
+                    <div class="project-box">
+                        <div class="project-icon">💻</div>
+
+                        <div>
+                            <h3>Pembelajaran Pemrograman Web</h3>
+                            <p>
+                                Saat ini saya fokus mempelajari dasar-dasar
+                                pemrograman web, termasuk menyusun struktur
+                                halaman dengan HTML dan mempercantik tampilan
+                                menggunakan CSS.
+                            </p>
+
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        
+<!-- CERTIFICATES & COURSES -->
+<section class="section certificate-section" id="sertifikat">
+    <div class="container">
+
+        <h2 class="section-title" style="justify-content:center;">
+            <span class="title-icon">✧</span>
+            Certificates &amp; Courses
+        </h2>
+
+        <p class="ml-intro">
+            Sertifikat pelatihan dan kelas yang saya ikuti
+            untuk mengembangkan keterampilan di bidang teknologi.
+        </p>
+
+        <div class="certificate-grid">
+
+            <!-- SERTIFIKAT PERTAMA -->
+            <article class="certificate-card">
+                <div class="certificate-image">
+                    <img src="sertifikat-ml.png"
+                         alt="Sertifikat kelas Machine Learning">
+                </div>
+
+                <div class="certificate-info">
+                    <span class="certificate-label">CERTIFICATE</span>
+
+                    <h3>Machine Learning &amp; Computer Vision</h3>
+
+                    <p>
+                        Sertifikat pelatihan untuk memperdalam
+                        pengetahuan di bidang machine learning
+                        dan computer vision.
+                    </p>
+
+                    <a href="sertifikat-ml.jpg"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="certificate-link">
+                        Lihat Sertifikat ↗
+                    </a>
+                </div>
+            </article>
+
+
+
+        </div>
+
+        <p class="certificate-note">
+            Sertifikat ditampilkan sebagai dokumentasi pembelajaran
+            dan pengembangan keterampilan.
+        </p>
+
+    </div>
+</section>
+
+        <!-- KONTAK -->
+        <section class="contact-section" id="kontak">
+            <div class="container contact-content">
+
+                <div>
+                    <h2 class="section-title">
+                        <span>✉</span> Kontak
+                    </h2>
+
+                    <p>
+                        Jika kamu ingin berkenalan lebih jauh, berdiskusi,
+                        atau berkolaborasi, jangan ragu untuk menghubungi saya.
+                    </p>
+
+                    <p>
+                        Email: gomaramanurung@gmail.com
+                    </p>
+
+                    <a href="mailto:gomaramanurung@gmail.com"
+                       class="button">
+                        ✉ &nbsp; Kirim Email &nbsp; →
+                    </a>
+                </div>
+
+                <div class="thank-you">
+                    Terima Kasih<br>
+                    Sudah Berkunjung ♡
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <p>
+                Diana Jenni Manurung &nbsp; | &nbsp; MI-3A
+                &nbsp; | &nbsp; Manajemen Informatika
+            </p>
+
+            <p>Made with ♡ using HTML5 &amp; CSS3</p>
+
+            <p>© 2026 Diana Jenni Manurung</p>
+        </div>
+    </footer>
+
+</body>
+</html>
